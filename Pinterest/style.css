@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 100%;
+  padding: 0px 7% 0px 7%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 100vh;
+  overflow-y: scroll;
+  /* scrollbar-width: none; */
+  /* -ms-overflow-style: none; */
+}
+
+.container::-webkit-scrollbar {
+  /* WebKit */
+  /* width: 0; */
+  /* height: 0; */
+}
+
+.grid {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.cell {
+  height: 100px;
+}
+
+.tile {
+  margin-bottom: 20px;
+  width: 100%;
+  min-height: 100px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  animation: fadein 0.4s;
+  background-size: cover;
+}
+
+.tile:hover {
+  transform: scale(1.02, 1.02);
+  cursor: pointer;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
