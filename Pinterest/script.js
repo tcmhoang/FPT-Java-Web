@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   const API_URL = "";
 
-  var ms_cols = Array.from(document.querySelectorAll(".cell"));
+  var ms_cols = Array.from(document.querySelectorAll(".col"));
 
   var sheet = window.document.styleSheets[0];
 
   sheet.insertRule(
-    `.cell{flex:${(1 / ms_cols.length) * 0.9}`,
+    `.col{flex:${(1 / ms_cols.length) * 0.9}`,
     sheet.cssRules.length
   );
 
@@ -42,14 +42,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for (let i = 0; i < row_count * row_count; i++) {
       let tile_height =
         image_heights[Math.floor(Math.random() * image_heights.length)];
-      let current_col = getMinHeightCol(ms_cols);
-      let tile = document.createElement("div");
+      const current_col = getMinHeightCol(ms_cols);
+
+      const tile = document.createElement("figure");
       tile.setAttribute("class", "tile");
-      tile.style.height = tile_height + "px";
-      let rand = Math.floor(Math.random() * 256);
-      tile.style.backgroundColor = `rgb(${rand}, ${128}, ${256 - rand})`;
-      tile.style.backgroundImage =
-        "url(https://picsum.photos/200/" + tile_height + ")";
+
+      const thumbnail = document.createElement("div");
+      thumbnail.setAttribute("class", "thumbnail");
+      const rand = Math.floor(Math.random() * 256);
+      thumbnail.style.backgroundColor = `rgb(${rand}, ${128}, ${256 - rand})`;
+
+      const img = document.createElement("img");
+      img.src = "https://picsum.photos/200/" + tile_height;
+      img.alt = "Very cool picture";
+
+      const overlay = document.createElement("a");
+      overlay.setAttribute("class", "overlay");
+
+      thumbnail.style.height = tile_height + "px";
+
+      thumbnail.appendChild(img);
+      thumbnail.appendChild(overlay);
+      tile.appendChild(thumbnail);
+
       current_col.appendChild(tile);
     }
   }
