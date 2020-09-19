@@ -7,6 +7,7 @@ class LikeButton {
     return likeButton;
   }
 }
+
 const API_URL = "";
 
 const CLIENT_HEIGHT = window.screen.availHeight;
@@ -14,6 +15,8 @@ const CLIENT_HEIGHT = window.screen.availHeight;
 var ms_cols = Array.from(document.querySelectorAll(".col"));
 
 var sheet = window.document.styleSheets[0];
+
+var init_tile = 3;
 
 sheet.insertRule(
   `.col{flex:${(1 / ms_cols.length) * 0.9}`,
@@ -48,10 +51,11 @@ var image_heights = [
   360,
 ];
 
-function loadTiles(row_count) {
-  for (let i = 0; i < row_count * row_count; i++) {
+function loadTiles(qual) {
+  for (let i = 0; i < qual * ms_cols.length; i++) {
     let tile_height =
       image_heights[Math.floor(Math.random() * image_heights.length)];
+
     const current_col = getMinHeightCol(ms_cols);
 
     const tile = document.createElement("figure");
@@ -62,15 +66,24 @@ function loadTiles(row_count) {
     const rand = Math.floor(Math.random() * 256);
     thumbnail.style.backgroundColor = `rgb(${rand}, ${128}, ${256 - rand})`;
 
-    const img = document.createElement("img");
+    const img = new Image();
+    const caption = document.createElement("figcaption");
+
+    // img.style.display = "none";
+
+    img.addEventListener("load", () => {
+      thumbnail.style.height = img.naturalHeight + "px"; // img.height
+      if (img.height > CLIENT_HEIGHT) shinkImageToScreenSize(thumbnail);
+      img.height = img.naturalHeight;
+      img.width = img.naturalWidth;
+      // img.style.display = "block";
+    });
+
     img.src = "https://picsum.photos/200/" + tile_height;
     img.alt = "Very cool picture";
-    img.addEventListener("load", (event) => (img.width = img.naturalWidth));
 
     const overlay = document.createElement("a");
     overlay.setAttribute("class", "overlay");
-
-    thumbnail.style.height = tile_height + "px";
 
     const likeButton = LikeButton.create();
 
@@ -84,21 +97,44 @@ function loadTiles(row_count) {
 }
 
 function getMinHeightCol(colList) {
-  return colList.reduce((curr, next) =>
+  return ms_cols.reduce((curr, next) =>
     curr.scrollHeight > next.scrollHeight ? next : curr
   );
 }
 
-loadTiles(4);
+loadTiles(init_tile);
 
 var container = document.querySelector(".main");
+
+while (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
+  init_tile++;
+  loadTiles(1);
+}
+
 container.addEventListener("scroll", function () {
   if (
     Math.ceil(container.scrollTop) + container.clientHeight >=
     container.scrollHeight
   ) {
-    setTimeout(() => loadTiles(3), 1500);
+    loadTiles(init_tile);
   }
 });
 
-// });
+function shinkImageToScreenSize(thumbnail) {
+  thumbnail.style.height = Math.ceil(CLIENT_HEIGHT * 0.7) + "px";
+  const expandFigButton = document.createElement("button");
+  expandFigButton.setAttribute("class", "extendTile");
+  expandFigButton.textContent = "Expand Image";
+  expandFigButton.addEventListener("click", function resizeImage() {
+    const img = thumbnail.querySelector("img");
+    if (expandFigButton.textContent === "Expand Image") {
+      thumbnail.style.height = img.height + "px";
+      expandFigButton.textContent = "Compress It!";
+    } else {
+      thumbnail.style.height = Math.ceil(CLIENT_HEIGHT * 0.7) + "px";
+      expandFigButton.textContent = "Expand Image";
+    }
+  });
+  thumbnail.appendChild(expandFigButton);
+  return thumbnail;
+}
