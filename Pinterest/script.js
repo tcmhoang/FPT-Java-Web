@@ -1,5 +1,15 @@
 // document.addEventListener("DOMContentLoaded", function (event) {
+class LikeButton {
+  static create() {
+    const likeButton = document.createElement("button");
+    likeButton.setAttribute("class", "likeButton");
+    likeButton.textContent = "Like";
+    return likeButton;
+  }
+}
 const API_URL = "";
+
+const CLIENT_HEIGHT = window.screen.availHeight;
 
 var ms_cols = Array.from(document.querySelectorAll(".col"));
 
@@ -62,8 +72,11 @@ function loadTiles(row_count) {
 
     thumbnail.style.height = tile_height + "px";
 
+    const likeButton = LikeButton.create();
+
     thumbnail.appendChild(img);
     thumbnail.appendChild(overlay);
+    thumbnail.appendChild(likeButton);
     tile.appendChild(thumbnail);
 
     current_col.appendChild(tile);
@@ -87,4 +100,5 @@ container.addEventListener("scroll", function () {
     setTimeout(() => loadTiles(3), 1500);
   }
 });
+
 // });
