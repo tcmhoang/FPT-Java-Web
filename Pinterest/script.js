@@ -8,7 +8,11 @@ class LikeButton {
   }
 }
 
-const API_URL = "";
+var start = 0;
+
+var init_tile = 3;
+
+const API_URL = "http://localhost:8080/Pinterest/api/all";
 
 const CLIENT_HEIGHT = window.screen.availHeight;
 
@@ -16,46 +20,16 @@ var ms_cols = Array.from(document.querySelectorAll(".col"));
 
 var sheet = window.document.styleSheets[0];
 
-var init_tile = 3;
+var data = [];
 
 sheet.insertRule(
   `.col{flex:${(1 / ms_cols.length) * 0.9}`,
   sheet.cssRules.length
 );
 
-var image_heights = [
-  120,
-  130,
-  140,
-  150,
-  160,
-  170,
-  180,
-  190,
-  200,
-  210,
-  220,
-  230,
-  240,
-  250,
-  260,
-  270,
-  280,
-  290,
-  300,
-  310,
-  320,
-  330,
-  340,
-  350,
-  360,
-];
-
 function loadTiles(qual) {
+  if (data.length == 0) window.removeEventListener("scroll");
   for (let i = 0; i < qual * ms_cols.length; i++) {
-    let tile_height =
-      image_heights[Math.floor(Math.random() * image_heights.length)];
-
     const tile = document.createElement("figure");
     tile.setAttribute("class", "tile");
 
@@ -66,6 +40,8 @@ function loadTiles(qual) {
 
     const img = new Image();
     const caption = document.createElement("figcaption");
+    let imgData = data.pop();
+    caption.innerHTML = imgData.caption;
 
     img.style.display = "none";
 
@@ -80,7 +56,7 @@ function loadTiles(qual) {
       setTimeout(() => (img.style.display = "block"), 2000);
     });
 
-    img.src = "https://picsum.photos/200/" + tile_height;
+    img.src = imgData.srcset;
     img.alt = "Very cool picture";
 
     const overlay = document.createElement("a");
@@ -92,7 +68,62 @@ function loadTiles(qual) {
     thumbnail.appendChild(overlay);
     thumbnail.appendChild(likeButton);
     tile.appendChild(thumbnail);
+    tile.append(caption);
   }
+}
+
+function createTile(data) {
+  const tile = document.createElement("figure");
+  tile.setAttribute("class", "tile");
+
+  const thumbnail = document.createElement("div");
+  thumbnail.setAttribute("class", "thumbnail");
+  const rand = Math.floor(Math.random() * 256);
+  thumbnail.style.backgroundColor = `rgb(${rand}, ${128}, ${256 - rand})`;
+
+  const img = new Image();
+  const caption = document.createElement("figcaption");
+  caption.innerHTML = data.caption;
+  img.style.display = "none";
+
+  img.addEventListener("load", () => {
+    thumbnail.style.height = img.naturalHeight + "px"; // img.height
+    if (img.height > CLIENT_HEIGHT) shinkImageToScreenSize(thumbnail);
+    img.height = img.naturalHeight;
+    img.width = img.naturalWidth;
+    const current_col = getMinHeightCol(ms_cols);
+    current_col.appendChild(tile);
+    current_col.style.height = current_col.scrollHeight;
+    setTimeout(() => (img.style.display = "block"), 2000);
+  });
+
+  img.src = data.srcset;
+  img.alt = "Very cool picture";
+
+  const overlay = document.createElement("a");
+  overlay.setAttribute("class", "overlay");
+
+  const likeButton = LikeButton.create();
+
+  thumbnail.appendChild(img);
+  thumbnail.appendChild(overlay);
+  thumbnail.appendChild(likeButton);
+  tile.appendChild(thumbnail);
+  tile.append(caption);
+}
+
+function init(cb) {
+  const promise = fetch(API_URL);
+  promise
+    .then(function (response) {
+      const processingPromise = response.json();
+      return processingPromise;
+    })
+    .then(function (processedPromise) {
+      data = processedPromise;
+      loadTiles(init_tile);
+      cb();
+    });
 }
 
 function getMinHeightCol(colList) {
@@ -101,16 +132,16 @@ function getMinHeightCol(colList) {
   );
 }
 
-loadTiles(init_tile);
-
-var addTile = setInterval(() => {
-  if (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
-    init_tile++;
-    loadTiles(1);
-  } else {
-    clearInterval(addTile);
-  }
-}, 3000);
+init(function addMoreTile() {
+  var addTile = setInterval(() => {
+    if (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
+      init_tile++;
+      loadTiles(1);
+    } else {
+      clearInterval(addTile);
+    }
+  }, 3000);
+});
 
 window.addEventListener("scroll", function () {
   if (

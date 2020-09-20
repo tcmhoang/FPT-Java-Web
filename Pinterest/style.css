@@ -84,6 +84,7 @@ body {
   flex-flow: row nowrap;
   justify-content: space-between;
   margin-top: 40px;
+  overflow-anchor: auto;
 }
 
 .col {
@@ -98,13 +99,16 @@ body {
   min-height: 100px;
   transition: all 0.2s ease-in-out;
   animation: fadein 0.4s;
+  border-radius: 13px 13px 9px 9px;
+  background-color: #f6f6f6;
+  box-shadow: 0 8px 4px -3px #f1f3f8;
 }
 
 .tile > .thumbnail {
   position: relative;
   top: 0;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 13px;
 }
 
 .tile > .thumbnail > img {
@@ -205,3 +209,7 @@ body {
   font-weight: bold;
 }
 /* End Overlay and like button */
+figcaption {
+  font-weight: 300;
+  padding: 10px;
+}
