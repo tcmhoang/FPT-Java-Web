@@ -56,8 +56,6 @@ function loadTiles(qual) {
     let tile_height =
       image_heights[Math.floor(Math.random() * image_heights.length)];
 
-    const current_col = getMinHeightCol(ms_cols);
-
     const tile = document.createElement("figure");
     tile.setAttribute("class", "tile");
 
@@ -69,14 +67,17 @@ function loadTiles(qual) {
     const img = new Image();
     const caption = document.createElement("figcaption");
 
-    // img.style.display = "none";
+    img.style.display = "none";
 
     img.addEventListener("load", () => {
       thumbnail.style.height = img.naturalHeight + "px"; // img.height
       if (img.height > CLIENT_HEIGHT) shinkImageToScreenSize(thumbnail);
       img.height = img.naturalHeight;
       img.width = img.naturalWidth;
-      // img.style.display = "block";
+      const current_col = getMinHeightCol(ms_cols);
+      current_col.appendChild(tile);
+      current_col.style.height = current_col.scrollHeight;
+      setTimeout(() => (img.style.display = "block"), 2000);
     });
 
     img.src = "https://picsum.photos/200/" + tile_height;
@@ -91,8 +92,6 @@ function loadTiles(qual) {
     thumbnail.appendChild(overlay);
     thumbnail.appendChild(likeButton);
     tile.appendChild(thumbnail);
-
-    current_col.appendChild(tile);
   }
 }
 
@@ -104,17 +103,19 @@ function getMinHeightCol(colList) {
 
 loadTiles(init_tile);
 
-var container = document.querySelector(".main");
+var addTile = setInterval(() => {
+  if (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
+    init_tile++;
+    loadTiles(1);
+  } else {
+    clearInterval(addTile);
+  }
+}, 3000);
 
-while (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
-  init_tile++;
-  loadTiles(1);
-}
-
-container.addEventListener("scroll", function () {
+window.addEventListener("scroll", function () {
   if (
-    Math.ceil(container.scrollTop) + container.clientHeight >=
-    container.scrollHeight
+    Math.ceil(window.pageYOffset) + window.screen.height >=
+    document.body.scrollHeight
   ) {
     loadTiles(init_tile);
   }

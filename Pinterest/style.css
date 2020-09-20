@@ -18,19 +18,7 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol";
   color: rgb(33, 25, 34);
   font-size: 12px;
-  height: 100%;
-}
-
-.main {
   scroll-behavior: smooth;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.main::-webkit-scrollbar {
-  width: 0;
-  height: 0;
 }
 
 /* Header */
@@ -95,7 +83,6 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  height: 100vh;
   margin-top: 40px;
 }
 
