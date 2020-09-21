@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/src/java/dal/PostDAO.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/src/java/business/PostResourceController.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/src/java/business/CORSFilter.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/web/index.html</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/Pinterest1/src/java/beans/Post.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

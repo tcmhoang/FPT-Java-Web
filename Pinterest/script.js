@@ -28,7 +28,10 @@ sheet.insertRule(
 );
 
 function loadTiles(qual) {
-  if (data.length == 0) window.removeEventListener("scroll");
+  if (data.length == 0) {
+    window.removeEventListener("scroll", updateTile);
+    return;
+  }
   for (let i = 0; i < qual * ms_cols.length; i++) {
     const tile = document.createElement("figure");
     tile.setAttribute("class", "tile");
@@ -143,14 +146,16 @@ init(function addMoreTile() {
   }, 3000);
 });
 
-window.addEventListener("scroll", function () {
+var updateTile = function () {
   if (
     Math.ceil(window.pageYOffset) + window.screen.height >=
     document.body.scrollHeight
   ) {
     loadTiles(init_tile);
   }
-});
+};
+
+window.addEventListener("scroll", updateTile);
 
 function shinkImageToScreenSize(thumbnail) {
   thumbnail.style.height = Math.ceil(CLIENT_HEIGHT * 0.7) + "px";
@@ -170,3 +175,4 @@ function shinkImageToScreenSize(thumbnail) {
   thumbnail.appendChild(expandFigButton);
   return thumbnail;
 }
+// });

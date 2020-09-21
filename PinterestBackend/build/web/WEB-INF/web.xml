@@ -13,4 +13,12 @@
             30
         </session-timeout>
     </session-config>
+    <context-param>
+        <param-name>jdbc-url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;databaseName=Pinterest;user=artlist;password=777;</param-value>
+    </context-param>
+    <context-param>
+        <param-name>tile-quantity</param-name>
+        <param-value>5</param-value>
+    </context-param>
 </web-app>

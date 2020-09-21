@@ -6,7 +6,6 @@
 package dal;
 
 import beans.Post;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,6 +20,10 @@ import java.util.logging.Logger;
  */
 
 public class PostDAO extends BaseDAO {
+    
+    public PostDAO(String url){
+        super(url);
+    }
     
     public List<Post> fetchAll() {
         List<Post> result = new LinkedList<>();

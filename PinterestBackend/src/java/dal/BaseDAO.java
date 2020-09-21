@@ -20,9 +20,9 @@ public abstract class BaseDAO{
     protected Connection connection;
     protected String url;
 
-    public BaseDAO() {
+    public BaseDAO(String url) {
         try {
-            url = "jdbc:sqlserver://localhost:1433;databaseName=Pinterest;user=artlist;password=777;";
+            this.url = url ;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(BaseDAO.class.getName()).log(Level.SEVERE, null, ex);
