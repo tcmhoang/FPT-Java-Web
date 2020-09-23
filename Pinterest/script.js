@@ -8,9 +8,7 @@ class LikeButton {
   }
 }
 
-var start = 0;
-
-var init_tile = 3;
+var init_tile = 0;
 
 const API_URL = "http://localhost:8080/Pinterest/api/all";
 
@@ -53,7 +51,7 @@ function loadTiles(qual) {
       if (img.height > CLIENT_HEIGHT) shinkImageToScreenSize(thumbnail);
       img.height = img.naturalHeight;
       img.width = img.naturalWidth;
-      const current_col = getMinHeightCol(ms_cols);
+      const current_col = getMinHeightCol();
       current_col.appendChild(tile);
       current_col.style.height = current_col.scrollHeight;
       setTimeout(() => (img.style.display = "block"), 2000);
@@ -75,46 +73,6 @@ function loadTiles(qual) {
   }
 }
 
-function createTile(data) {
-  const tile = document.createElement("figure");
-  tile.setAttribute("class", "tile");
-
-  const thumbnail = document.createElement("div");
-  thumbnail.setAttribute("class", "thumbnail");
-  const rand = Math.floor(Math.random() * 256);
-  thumbnail.style.backgroundColor = `rgb(${rand}, ${128}, ${256 - rand})`;
-
-  const img = new Image();
-  const caption = document.createElement("figcaption");
-  caption.innerHTML = data.caption;
-  img.style.display = "none";
-
-  img.addEventListener("load", () => {
-    thumbnail.style.height = img.naturalHeight + "px"; // img.height
-    if (img.height > CLIENT_HEIGHT) shinkImageToScreenSize(thumbnail);
-    img.height = img.naturalHeight;
-    img.width = img.naturalWidth;
-    const current_col = getMinHeightCol(ms_cols);
-    current_col.appendChild(tile);
-    current_col.style.height = current_col.scrollHeight;
-    setTimeout(() => (img.style.display = "block"), 2000);
-  });
-
-  img.src = data.srcset;
-  img.alt = "Very cool picture";
-
-  const overlay = document.createElement("a");
-  overlay.setAttribute("class", "overlay");
-
-  const likeButton = LikeButton.create();
-
-  thumbnail.appendChild(img);
-  thumbnail.appendChild(overlay);
-  thumbnail.appendChild(likeButton);
-  tile.appendChild(thumbnail);
-  tile.append(caption);
-}
-
 function init(cb) {
   const promise = fetch(API_URL);
   promise
@@ -129,7 +87,7 @@ function init(cb) {
     });
 }
 
-function getMinHeightCol(colList) {
+function getMinHeightCol() {
   return ms_cols.reduce((curr, next) =>
     curr.scrollHeight > next.scrollHeight ? next : curr
   );
@@ -137,7 +95,7 @@ function getMinHeightCol(colList) {
 
 init(function addMoreTile() {
   var addTile = setInterval(() => {
-    if (getMinHeightCol(ms_cols).scrollHeight < CLIENT_HEIGHT) {
+    if (getMinHeightCol().scrollHeight < CLIENT_HEIGHT) {
       init_tile++;
       loadTiles(1);
     } else {
