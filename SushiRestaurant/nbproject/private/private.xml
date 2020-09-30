@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/index.xhtml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/view/snippet/layout/footer.xhtml</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/dal/AbstractBaseDAO.java</file>
             <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/view/template/CommonLayout.xhtml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/view/snippet/layout/header.xhtml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/resources/css/style.css</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/dal/ArticleDAO.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/service/IArticleService.java</file>
         </group>
     </open-files>
 </project-private>

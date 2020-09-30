@@ -29,24 +29,16 @@ public abstract class AbstractBaseDAO {
         }
     }
 
-    public void openConnection() {
+    public void openConnection() throws SQLException {
         if (connection == null) {
-            try {
-                connection = DriverManager.getConnection(url);
-            } catch (SQLException ex) {
-                Logger.getLogger(AbstractBaseDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                connection = DriverManager.getConnection(url);   
         }
     }
 
-    public void closeConnection() {
+    public void closeConnection() throws SQLException {
         if (connection != null) {
-            try {
                 connection.close();
                 connection = null;
-            } catch (SQLException ex) {
-                Logger.getLogger(AbstractBaseDAO.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 }
