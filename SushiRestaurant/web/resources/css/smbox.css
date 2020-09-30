@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 30, 2020, 9:57:07 AM
+    Author     : Camer
+*/
+
+.content-right {
+  order: 1;
+  width: 30%;
+  height: 100%;
+}
+
+.content-right .socialmedia-box {
+  border: 1px solid #fff;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #535353;
+}
+
+.socialmedia-box a {
+  display: block;
+  color: black;
+}
+
+.socialmedia-box a:hover {
+  color: red;
+}
+
+.socialmedia-box .fb::before {
+  content: url("#{resource['img/fbicon.jpg']}");
+  margin-right: 5px;
+}
+
+.socialmedia-box .twiter::before {
+  content: url("#{resource['img/twittericon.jpg']}");
+  margin-right: 5px;
+}
+
+.socialmedia-box .google::before {
+  content: url("#{resource['img/ggicon.jpg']}");
+  margin-right: 5px;
+}
+
+.socialmedia-box h4 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}

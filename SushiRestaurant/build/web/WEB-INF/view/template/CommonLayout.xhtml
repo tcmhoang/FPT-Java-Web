@@ -16,6 +16,7 @@ and open the template in the editor.
         <h:outputStylesheet name="css/style.css"/>
         <h:outputStylesheet name="css/header.css"/>
         <h:outputStylesheet name="css/footer.css"/>
+        <h:outputStylesheet name="css/smbox.css"/>
         <ui:insert name="stylesheet">
         </ui:insert>
     </h:head>
@@ -30,6 +31,9 @@ and open the template in the editor.
                 <div class="content">
                     <ui:insert name="content">
                         This is a place holder content
+                    </ui:insert>
+                    <ui:insert name="sm-box">
+                        <ui:include src="/WEB-INF/view/snippet/layout/SocialMedia-Box.xhtml"/>
                     </ui:insert>
                 </div>
                 <footer class="footer">

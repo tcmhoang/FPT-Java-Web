@@ -6,11 +6,12 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/WEB-INF/view/template/CommonLayout.xhtml">
-        <ui:define name="stylesheet">
-            
-        </ui:define>
         <ui:define name="content">
-            
+            <div class="left-content">
+                <div class="thumbnail">
+                    <h:graphicImage alt="Jumbotron" name="#{homeController.jumpotron}"/>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 </html>

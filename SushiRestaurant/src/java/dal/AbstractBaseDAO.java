@@ -7,6 +7,8 @@ package dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +21,8 @@ public abstract class AbstractBaseDAO {
 
     protected Connection connection;
     protected String url;
+    protected PreparedStatement stm;
+    protected ResultSet rs;
 
     public AbstractBaseDAO(String url) {
         try {
@@ -31,14 +35,22 @@ public abstract class AbstractBaseDAO {
 
     public void openConnection() throws SQLException {
         if (connection == null) {
-                connection = DriverManager.getConnection(url);   
+            connection = DriverManager.getConnection(url);
         }
     }
 
     public void closeConnection() throws SQLException {
-        if (connection != null) {
-                connection.close();
-                connection = null;
+        if (rs != null || !rs.isClosed()) {
+            rs.close();
+            rs = null;
+        }
+        if (stm != null || !stm.isClosed()) {
+            stm.close();
+            stm = null;
+        }
+        if (connection != null || !connection.isClosed()) {
+            connection.close();
+            connection = null;
         }
     }
 }

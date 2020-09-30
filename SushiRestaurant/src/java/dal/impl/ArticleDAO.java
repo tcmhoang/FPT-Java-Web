@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dal;
+package dal.impl;
 
 import bean.Article;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import dal.AbstractBaseDAO;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,7 +17,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.faces.context.FacesContext;
 
-import service.IArticleService;
+import dal.IArticleDAO;
 
 /**
  *
@@ -27,28 +26,21 @@ import service.IArticleService;
 @Stateless
 @Local
 @Alternative
-public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
+public class ArticleDAO extends AbstractBaseDAO implements IArticleDAO {
 
     public ArticleDAO() {
-        this(FacesContext.getCurrentInstance().getExternalContext().getInitParameter("jdbc-url"));
-    }
-
-    public ArticleDAO(String url) {
-        super(url);
+        super(FacesContext.getCurrentInstance().getExternalContext().getInitParameter("jdbc-url"));
     }
 
     @Override
-    public List<Article> getArticles(int page, int qual) {
+    public List<Article> getArticlesAt(int page, int qual) {
         int str = page * qual - (qual - 1);
         int end = page * qual;
-        List<Article> articles = new LinkedList();
+        List<Article> articles = new LinkedList<>();
         String query = "select * from ("
                 + "select *, ROW_NUMBER() over (order by id) as rownumber from Article"
                 + ") as articles "
                 + "where articles.rownumber between ? and ?;";
-        PreparedStatement stm = null;
-        ResultSet rs = null;
-
         try {
             openConnection();
             stm = connection.prepareStatement(query);
@@ -56,7 +48,6 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
             stm.setInt(2, end);
             rs = stm.executeQuery();
             while (rs.next()) {
-                //(id, tile, img, summary, content)
                 int id = rs.getInt("id");
                 String title = rs.getString("title");
                 String img = "img/" + rs.getString("img");
@@ -68,12 +59,6 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
             Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                if (stm != null) {
-                    stm.close();
-                }
-                if (rs != null) {
-                    rs.close();
-                }
                 closeConnection();
             } catch (SQLException ex) {
                 Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -86,9 +71,6 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
     public Article getArticleById(int id) {
         String query = "select * from Article where id = ?";
         Article article = new Article();
-        PreparedStatement stm = null;
-        ResultSet rs = null;
-
         try {
             openConnection();
             stm = connection.prepareStatement(query);
@@ -97,17 +79,15 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
             while (rs.next()) {
                 article.setId(rs.getInt("id"));
                 article.setTitle(rs.getString("title"));
-                article.setImgsrc("img/"+ rs.getString("img"));
+                article.setImgsrc("img/" + rs.getString("img"));
                 article.setSummary(rs.getString("sum"));
                 article.setContent(rs.getString("content"));
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
+        } finally {
             try {
-                if(rs != null) rs.close();
-                if(stm != null) stm.close();
                 closeConnection();
             } catch (SQLException ex) {
                 Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -118,7 +98,27 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleService {
 
     @Override
     public int getQuantityOfArticle() {
-        return 0;
+        int size = 0;
+
+        String query = "select count(*) from Article";
+
+        try {
+            openConnection();
+            stm = connection.prepareStatement(query);
+            rs = stm.executeQuery();
+            if(rs.last()){
+                size = rs.getRow();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return size;
     }
 
 }

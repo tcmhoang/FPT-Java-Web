@@ -6,7 +6,7 @@
     </context-param>
     <context-param>
         <param-name>jdbc-url</param-name>
-        <param-value>jdbc:sqlserver://localhost:1433;databaseName=Sushi;user=artlist;password=777; [artlist on Default schema]</param-value>
+        <param-value>jdbc:sqlserver://localhost:1433;databaseName=Sushi;user=artlist;password=777;</param-value>
     </context-param>
     <context-param>
         <param-name>ApplicationName</param-name>
