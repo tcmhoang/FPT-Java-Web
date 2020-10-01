@@ -1,5 +1,5 @@
 body{
-    background: url("#{resource['img/wine.png']}");
+    background: url("#{resource['img/wine.png']}") no-repeat;
     background-color: #D5F46B;
     padding-top: 0;
     margin-top: 0;

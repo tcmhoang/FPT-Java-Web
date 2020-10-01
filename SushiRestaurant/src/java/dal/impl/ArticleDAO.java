@@ -100,15 +100,14 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleDAO {
     public int getQuantityOfArticle() {
         int size = 0;
 
-        String query = "select count(*) from Article";
+        String query = "select count(*) as count from Article";
 
         try {
             openConnection();
             stm = connection.prepareStatement(query);
             rs = stm.executeQuery();
-            if(rs.last()){
-                size = rs.getRow();
-            }
+            rs.next();
+            size = rs.getInt("count");
         } catch (SQLException ex) {
             Logger.getLogger(ArticleDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

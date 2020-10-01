@@ -8,5 +8,6 @@
         <class>dal.impl.ArticleDAO</class>
         <class>dal.impl.ContactInformationDAO</class>
         <class>service.impl.ContactInformationService</class>
+        <class>service.impl.ArticleService</class>
     </alternatives>
 </beans>

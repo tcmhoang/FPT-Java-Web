@@ -5,8 +5,11 @@
  */
 package controller;
 
+import bean.Article;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import service.IArticleService;
 import service.IContactInformationService;
 
 /**
@@ -16,10 +19,39 @@ import service.IContactInformationService;
 @ManagedBean
 public class HomeController {
 
+    private int currPage;
+
     @EJB
     private IContactInformationService contactInformationService;
 
+    @EJB
+    private IArticleService articleService;
+
+    public HomeController() {
+        currPage = 1;
+    }
+
+    public int getCurrPage() {
+        return currPage;
+    }
+
+    public void setCurrPage(int currPage) {
+        this.currPage = currPage;
+    }
+
+    public IContactInformationService getContactInformationService() {
+        return contactInformationService;
+    }
+
+    public void setContactInformationService(IContactInformationService contactInformationService) {
+        this.contactInformationService = contactInformationService;
+    }
+
+    public List<Article> getArticles() {
+        return articleService.getArticleAt(currPage);
+    }
+
     public String getJumpotron() {
-        return "img/" +  contactInformationService.getJumbotronName();
+        return "img/" + contactInformationService.getJumbotronName();
     }
 }

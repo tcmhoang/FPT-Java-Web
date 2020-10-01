@@ -5,12 +5,20 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/WEB-INF/view/template/CommonLayout.xhtml">
+    <ui:composition template="/WEB-INF/template/layout/CommonLayout.xhtml">
         <ui:define name="content">
             <div class="left-content">
                 <div class="thumbnail">
                     <h:graphicImage alt="Jumbotron" name="#{homeController.jumpotron}"/>
                 </div>
+                <h:outputLabel rendered="#{homeController.articles.size() == 0}">
+                    No article here!
+                </h:outputLabel>
+                <ui:repeat rendered="#{homeController.articles.size() > 0}" value="#{homeController.articles}" var="article">
+                    <ui:include src="WEB-INF/template/snippet/Post.xhtml">
+                        <ui:param name="article" value="#{article}"/>
+                    </ui:include>
+                </ui:repeat>
             </div>
         </ui:define>
     </ui:composition>
