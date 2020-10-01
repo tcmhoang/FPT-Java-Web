@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body{
     background: url("#{resource['img/wine.png']}") no-repeat;
     background-color: #D5F46B;
@@ -20,7 +30,7 @@ body{
     background-color: #fff;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    width:  760px;
+    width:  100%;
 }
 
 .content{
@@ -31,7 +41,7 @@ body{
 .left-content{
     order: 0;
     padding-right: 25px;
-    width: 86%;
+    width: 75%;
     height: 100%;
 }
 

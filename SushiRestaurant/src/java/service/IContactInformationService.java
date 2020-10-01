@@ -5,6 +5,8 @@
  */
 package service;
 
+import bean.Information;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,4 +16,12 @@ import javax.ejb.Local;
 @Local
 public interface IContactInformationService {
     String getJumbotronName();
+    
+    String getAddress();
+    
+    String getPhoneNumber();
+    
+    String getEmail();
+    
+    List<Information> getWorkingHours();
 }

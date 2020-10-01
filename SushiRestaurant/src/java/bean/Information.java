@@ -6,27 +6,21 @@
 package bean;
 
 
-
 /**
  *
  * @author Camer
  */
 
-public class Article {
+public class Information {
 
     private int id;
-    private String title;
-    private String imgsrc;
+    private String type;
     private String content;
     private String summary;
-    public Article() {
 
-    }
-
-    public Article(int id, String title, String imgsrc, String content, String summary) {
+    public Information(int id, String type, String content, String summary) {
         this.id = id;
-        this.title = title;
-        this.imgsrc = imgsrc;
+        this.type = type;
         this.content = content;
         this.summary = summary;
     }
@@ -39,20 +33,12 @@ public class Article {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getType() {
+        return type;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getImgsrc() {
-        return imgsrc;
-    }
-
-    public void setImgsrc(String imgsrc) {
-        this.imgsrc = imgsrc;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getContent() {
@@ -73,4 +59,3 @@ public class Article {
 
     
 }
-

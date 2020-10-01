@@ -5,7 +5,7 @@
  */
 package dal.impl;
 
-import bean.ContactInformation;
+import bean.Information;
 import dal.AbstractBaseDAO;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -32,10 +32,10 @@ public class ContactInformationDAO extends AbstractBaseDAO implements IContractI
     }
 
     @Override
-    public List<ContactInformation> getContact(String type) {
+    public List<Information> getInfoOf(String type) {
         String sql = "SELECT * FROM Information WHERE type = (?)";
 
-        List<ContactInformation> listInfo = new LinkedList<>();
+        List<Information> listInfo = new LinkedList<>();
         try {
             openConnection();
             stm = connection.prepareStatement(sql);
@@ -48,7 +48,7 @@ public class ContactInformationDAO extends AbstractBaseDAO implements IContractI
                 String sum = rs.getString("summary");
                 String content = rs.getString("content");
 
-                ContactInformation contact = new ContactInformation(id, typeContact, content, sum);
+                Information contact = new Information(id, typeContact, content, sum);
                 listInfo.add(contact);
             }
 

@@ -5,15 +5,12 @@
  */
 package bean;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Camer
  */
-@ManagedBean
-@ViewScoped
+
 public class Dish {
     
     private int id;

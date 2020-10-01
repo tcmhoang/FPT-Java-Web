@@ -5,7 +5,7 @@
  */
 package dal;
 
-import bean.ContactInformation;
+import bean.Information;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -16,5 +16,5 @@ import javax.ejb.Local;
 @Local
 public interface IContractInformationDAO {
 
-    List<ContactInformation> getContact(String type);
+    List<Information> getInfoOf(String type);
 }
