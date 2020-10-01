@@ -5,7 +5,7 @@
  */
 package service;
 
-import bean.Article;
+import bean.Dish;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,7 +14,9 @@ import javax.ejb.Local;
  * @author Camer
  */
 @Local
-public interface IArticleService {
-    List<Article> getArticleAt(int page);
+public interface IDishService {
+
+    List<Dish> getDishAt(int page);
+
     int getMaxPage();
 }

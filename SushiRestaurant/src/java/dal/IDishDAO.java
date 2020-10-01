@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package dal;
 
-import bean.Article;
+import bean.Dish;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,7 +14,11 @@ import javax.ejb.Local;
  * @author Camer
  */
 @Local
-public interface IArticleService {
-    List<Article> getArticleAt(int page);
-    int getMaxPage();
+public interface IDishDAO {
+
+    List<Dish> getMenusAt(int page, int qual);
+    
+    int getNumberOfMenu();
+    
+
 }

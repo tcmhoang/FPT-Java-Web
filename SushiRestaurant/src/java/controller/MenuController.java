@@ -5,15 +5,14 @@
  */
 package controller;
 
-import bean.Article;
+import bean.Dish;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import service.IArticleService;
-import service.IContactInformationService;
+import service.IDishService;
 
 /**
  *
@@ -21,17 +20,14 @@ import service.IContactInformationService;
  */
 @ManagedBean
 @ViewScoped
-public class HomeController {
+public class MenuController {
 
     private int currPage;
 
     @EJB
-    private IContactInformationService contactInformationService;
+    private IDishService dishService;
 
-    @EJB
-    private IArticleService articleService;
-
-    public HomeController() {
+    public MenuController() {
         currPage = 1;
     }
 
@@ -43,16 +39,12 @@ public class HomeController {
         this.currPage = currPage;
     }
 
-    public List<Article> getArticles() {
-        return articleService.getArticleAt(currPage);
-    }
-
-    public String getJumpotron() {
-        return "img/" + contactInformationService.getJumbotronName();
+    public List<Dish> getDishes() {
+        return dishService.getDishAt(currPage);
     }
 
     public List<Integer> getPages() {
-        return IntStream.rangeClosed(1, articleService.getMaxPage()).boxed().collect(Collectors.toList());
+        return IntStream.rangeClosed(1, dishService.getMaxPage()).boxed().collect(Collectors.toList());
     }
 
 }

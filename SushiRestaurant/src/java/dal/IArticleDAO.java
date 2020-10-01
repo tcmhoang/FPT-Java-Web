@@ -16,7 +16,7 @@ import javax.ejb.Local;
 @Local
 public interface IArticleDAO {
 
-    List<Article> getArticlesAt(int page, int qual);
+    List<Article> getArticlesAt(int atPage, int qual);
 
     Article getArticleById(int id);
 

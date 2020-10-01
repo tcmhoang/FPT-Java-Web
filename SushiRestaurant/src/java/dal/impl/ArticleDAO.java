@@ -33,9 +33,9 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleDAO {
     }
 
     @Override
-    public List<Article> getArticlesAt(int page, int qual) {
-        int str = page * qual - (qual - 1);
-        int end = page * qual;
+    public List<Article> getArticlesAt(int atPage, int qual) {
+        int str = atPage * qual - (qual - 1);
+        int end = atPage * qual;
         List<Article> articles = new LinkedList<>();
         String query = "select * from ("
                 + "select *, ROW_NUMBER() over (order by id) as rownumber from Article"

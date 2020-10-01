@@ -11,15 +11,17 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <body>
         <ui:component>
-            <div class="post-wrapper">
-                <span class="active">#{article.title}</span>
-                <div class="post">
-                    <div class="left-post">
-                        <h:graphicImage alt="some blah text here" name="#{article.imgsrc}"/>
-                    </div>
-                    <div class="right-post">
-                        <p>#{article.content}</p>
-                    </div>
+            <div class="menu-container">
+                <div class="order">
+                    <span>Menu #{dish.id}</span>
+                    <span class="float-right">Price</span>
+                </div>
+                <div class="title">
+                    <span>#{dish.name}</span>
+                    <span class="float-right">$#{dish.price}</span>
+                </div>
+                <div class="description">
+                    <span>#{dish.description}</span>
                 </div>
             </div>
         </ui:component>

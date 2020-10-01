@@ -14,8 +14,8 @@
             <span>Welcome to this website</span>
         </div>
         <div class="menu">
-            <h:link value="Home"  outcome="index.xhtml"/>
-            <h:link value="Menu and Price list" outcome="index.xhtml"/>
+            <h:link class="#{view.viewId eq '/index.xhtml' ? 'active' : ''}" value="Home"  outcome="index.xhtml"/>
+            <h:link class="#{view.viewId eq '/menu.xhtml' ? 'active' : ''}" value="Menu and Price list"  outcome="menu.xhtml"/>
             <h:link value="Find Us" outcome="index.xhtml"/>
         </div>
     </ui:composition>

@@ -7,7 +7,9 @@
     <alternatives>
         <class>dal.impl.ArticleDAO</class>
         <class>dal.impl.ContactInformationDAO</class>
+        <class>dal.impl.DishDAO</class>
         <class>service.impl.ContactInformationService</class>
         <class>service.impl.ArticleService</class>
+        <class>service.impl.DishService</class>
     </alternatives>
 </beans>

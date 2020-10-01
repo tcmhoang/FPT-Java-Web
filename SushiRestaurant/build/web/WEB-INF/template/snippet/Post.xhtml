@@ -11,13 +11,11 @@ and open the template in the editor.
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <body>
         <ui:component>
-            <div class="border-post">
-                <span><a href="DetailsPost?id=#{article.id}">#{article.title}</a></span>
+            <div class="post-wrapper">
+                <span class="active">#{article.title}</span>
                 <div class="post">
                     <div class="left-post">
-                        <a href="DetailsPost?id=#{article.id}">
-                            <h:graphicImage alt="some blah text here" name="#{article.imgsrc}"/>
-                        </a>
+                        <h:graphicImage alt="some blah text here" name="#{article.imgsrc}"/>
                     </div>
                     <div class="right-post">
                         <p>#{article.content}</p>

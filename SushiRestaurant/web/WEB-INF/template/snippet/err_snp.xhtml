@@ -9,16 +9,13 @@ and open the template in the editor.
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
-    <ui:composition>
-        <h:outputText value="Error Code: #{errorHandler.statusCode}"></h:outputText>
-        <br />
-        <h:outputText value="Error Desscription: #{errorHandler.message}"></h:outputText>
-        <br />
-        <h:outputText value="Exception Type: #{errorHandler.exceptionType}"></h:outputText>
-        <br />
-        <h:outputText value="Exception Calss: #{errorHandler.exception}"></h:outputText>
-        <br />
-        <h:outputText value="Request URI : #{errorHandler.requestURI}"></h:outputText>
-    </ui:composition>
+    <ui:component>
+        <div class="left-content">
+            <h2>This page is lost</h2>
+            <h3>From here, you can make your way to the Sushi Home Page <br/>
+                If you can’t find what you’re looking for, or you keep running into trouble, please contact us at #{email}.</h3>
+            <h:link value="Click here to return to home page" outcome="index.xhtml"/>
+        </div>
+    </ui:component>>
 </html>
 
