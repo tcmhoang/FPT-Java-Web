@@ -5,7 +5,6 @@
  */
 package service.impl;
 
-import bean.Article;
 import bean.Dish;
 import dal.IDishDAO;
 import java.util.Collections;
@@ -13,7 +12,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Local;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.faces.context.FacesContext;
 import service.IDishService;
@@ -22,7 +21,7 @@ import service.IDishService;
  *
  * @author Camer
  */
-@Stateful
+@Stateless
 @Local
 @Alternative
 public class DishService implements IDishService {

@@ -80,7 +80,7 @@ public class ArticleDAO extends AbstractBaseDAO implements IArticleDAO {
                 article.setId(rs.getInt("id"));
                 article.setTitle(rs.getString("title"));
                 article.setImgsrc("img/" + rs.getString("img"));
-                article.setSummary(rs.getString("sum"));
+                article.setSummary(rs.getString("summary"));
                 article.setContent(rs.getString("content"));
             }
 

@@ -12,7 +12,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Local;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.faces.context.FacesContext;
 import service.IArticleService;
@@ -21,7 +21,7 @@ import service.IArticleService;
  *
  * @author Camer
  */
-@Stateful
+@Stateless
 @Local
 @Alternative
 public class ArticleService implements IArticleService {
@@ -60,6 +60,11 @@ public class ArticleService implements IArticleService {
     @Override
     public int getMaxPage() {
         return maxPage;
+    }
+
+    @Override
+    public Article getArticleByID(int id) {
+        return articleDAO.getArticleById(id);
     }
 
 }

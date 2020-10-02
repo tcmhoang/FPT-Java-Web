@@ -6,13 +6,11 @@
 package bean;
 
 
-
 /**
  *
  * @author Camer
  */
-
-public class Article {
+public class Article{
 
     private int id;
     private String title;
@@ -22,7 +20,8 @@ public class Article {
     public Article() {
 
     }
-
+    
+    
     public Article(int id, String title, String imgsrc, String content, String summary) {
         this.id = id;
         this.title = title;
@@ -70,7 +69,6 @@ public class Article {
     public void setSummary(String summary) {
         this.summary = summary;
     }
-
     
 }
 

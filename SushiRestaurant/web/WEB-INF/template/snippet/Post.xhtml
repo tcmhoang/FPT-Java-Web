@@ -12,13 +12,20 @@ and open the template in the editor.
     <body>
         <ui:component>
             <div class="post-wrapper">
-                <span class="active">#{article.title}</span>
+                <span>
+                    <h:link value="#{article.title}" outcome="article">
+                        <f:param name="postID" value="#{article.id}"/>
+                    </h:link>
+                </span>
                 <div class="post">
                     <div class="left-post">
-                        <h:graphicImage alt="some blah text here" name="#{article.imgsrc}"/>
+                        <h:link outcome="article">
+                            <f:param name="postID" value="#{article.id}"/>
+                            <h:graphicImage alt="some blah text here" name="#{article.imgsrc}" />
+                        </h:link>
                     </div>
                     <div class="right-post">
-                        <p>#{article.content}</p>
+                        <p>#{article.summary}</p>
                     </div>
                 </div>
             </div>

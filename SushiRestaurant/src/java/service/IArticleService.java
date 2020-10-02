@@ -17,4 +17,5 @@ import javax.ejb.Local;
 public interface IArticleService {
     List<Article> getArticleAt(int page);
     int getMaxPage();
+    Article getArticleByID(int id);
 }

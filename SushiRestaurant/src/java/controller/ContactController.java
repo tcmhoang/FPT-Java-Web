@@ -6,9 +6,11 @@
 package controller;
 
 import bean.Information;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import service.IContactInformationService;
 
@@ -17,7 +19,8 @@ import service.IContactInformationService;
  * @author Camer
  */
 @ManagedBean
-public class ContactController {
+@ApplicationScoped
+public class ContactController implements Serializable{
 
     private String address;
     private String tel;

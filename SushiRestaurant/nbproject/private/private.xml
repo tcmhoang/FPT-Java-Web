@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/resources/css/style.css</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/controller/ContactController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/controller/ArticleDetailsBean.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/dal/impl/ArticleDAO.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/WEB-INF/template/snippet/Post.xhtml</file>
             <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/controller/HomeController.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/contact.xhtml</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/src/java/controller/MenuController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/SushiRestaurant/web/article.xhtml</file>
         </group>
     </open-files>
 </project-private>

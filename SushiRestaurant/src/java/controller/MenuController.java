@@ -6,6 +6,7 @@
 package controller;
 
 import bean.Dish;
+import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -20,7 +21,7 @@ import service.IDishService;
  */
 @ManagedBean
 @ViewScoped
-public class MenuController {
+public class MenuController implements Serializable{
 
     private int currPage;
 

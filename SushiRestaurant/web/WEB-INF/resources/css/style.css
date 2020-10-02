@@ -41,8 +41,14 @@ body{
 .left-content{
     order: 0;
     padding-right: 25px;
-    width: 75%;
+    width: 70%;
     height: 100%;
+}
+
+.right-content {
+  order: 1;
+  width: 30%;
+  height: 100%;
 }
 
 .right-post{
@@ -73,7 +79,7 @@ body{
 
 .thumbnail img{
     border-radius: 10px;
-    max-width: 545px;
+    width: 100%;
 }
 
 .post{

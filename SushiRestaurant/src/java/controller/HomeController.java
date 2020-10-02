@@ -6,6 +6,7 @@
 package controller;
 
 import bean.Article;
+import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -21,7 +22,7 @@ import service.IContactInformationService;
  */
 @ManagedBean
 @ViewScoped
-public class HomeController {
+public class HomeController implements Serializable{
 
     private int currPage;
 

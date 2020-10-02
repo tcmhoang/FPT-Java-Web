@@ -8,13 +8,8 @@ and open the template in the editor.
     Author     : Camer
 */
 
-.content-right {
-  order: 1;
-  width: 30%;
-  height: 100%;
-}
 
-.content-right .socialmedia-box {
+.right-content .socialmedia-box {
   border: 1px solid #fff;
   margin-top: 10px;
   padding-bottom: 20px;
