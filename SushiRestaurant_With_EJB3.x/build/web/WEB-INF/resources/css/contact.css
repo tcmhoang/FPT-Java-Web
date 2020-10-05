@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 1, 2020, 10:38:15 AM
+    Author     : Camer
+*/
+
+.contact p{
+    width: 170px;
+}
+
+.info{
+    float: left;
+    width: 40%;
+}
+
+.opening{
+    float: right;
+    width: 40%;
+}
+
+
+.map{
+    clear: both;
+}
+
+.map-wrapper{
+    border-top: 1px dashed gray;
+}
+
+.map-wrapper img{
+    
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

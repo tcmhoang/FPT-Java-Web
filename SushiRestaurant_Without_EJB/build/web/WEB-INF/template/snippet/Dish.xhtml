@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:component>
+            <div class="menu-container">
+                <div class="order">
+                    <span>Menu #{dish.id}</span>
+                    <span class="float-right">Price</span>
+                </div>
+                <div class="title">
+                    <span>#{dish.name}</span>
+                    <span class="float-right">$#{dish.price}</span>
+                </div>
+                <div class="description">
+                    <span>#{dish.description}</span>
+                </div>
+            </div>
+        </ui:component>
+    </body>
+</html>

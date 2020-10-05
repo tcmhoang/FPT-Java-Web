@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/WEB-INF/template/layout/CommonLayout.xhtml">
+
+        <ui:define name="stylesheet">
+            <h:outputStylesheet name="css/contact.css"/>
+        </ui:define>
+
+        <ui:define name="content">
+            <div class="left-content">
+                <h2>Find us</h2>
+                <div class="info">
+                    <div class="contact">
+                        <h3>Address and Contact</h3>
+                        <p>
+                            <h:outputText value="#{contactController.address}"/>
+                        </p>
+                    </div>
+                    <div class="tel-mail">
+                        <p>
+                            <h:outputFormat value="Tel: {0}">
+                                <f:param value="#{contactController.tel}"/>
+                            </h:outputFormat>
+                        </p>
+                        <p>
+                            <h:outputFormat value="Email: {0}">
+                                <f:param value="#{contactController.mail}"/>
+                            </h:outputFormat>
+                        </p>
+                    </div>
+                </div>
+                <div class="opening">
+                    <h3>Opening Hours</h3>
+                    <ui:repeat value="#{contactController.workingHours}" var="workInfo">
+                        <p>
+                            <h:outputFormat value="{0} - {1}">
+                                <f:param value="#{workInfo.content}"/>
+                                <f:param value="#{workInfo.summary}"/>
+                            </h:outputFormat>
+                        </p>
+                    </ui:repeat>
+                </div>
+                <div class="map">
+                    <div class="map-wrapper">
+                        <img src="#{resource['img/map.png']}" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/template/layout/CommonLayout.xhtml">
+        <ui:define name="content">
+            <div class="left-content">
+                <div class="thumbnail">
+                    <h:graphicImage alt="Jumbotron" name="#{homeController.jumpotron}"/>
+                </div>
+                <h:outputLabel rendered="#{homeController.articles.size() eq 0}">
+                    No article here!
+                </h:outputLabel>
+                <ui:repeat rendered="#{homeController.articles.size() gt 0}" value="#{homeController.articles}" var="article">
+                    <ui:include src="WEB-INF/template/snippet/Post.xhtml">
+                        <ui:param name="article" value="#{article}"/>
+                    </ui:include>
+                </ui:repeat>
+                <h:form class="nav-page">
+                    <ui:repeat value="#{homeController.pages}" var="pageNum">
+                        <h:commandLink value="#{pageNum}" action="#{homeController.setCurrPage(pageNum)}"/> 
+                    </ui:repeat>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -1,0 +1,119 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+    background: url("#{resource['img/wine.png']}") no-repeat;
+    background-color: #D5F46B;
+    padding-top: 0;
+    margin-top: 0;
+    font-family: sans-serif;
+    min-width: 546px;
+}
+
+.container{
+    width: 800px;
+    margin: 0 auto;
+    box-shadow:  0 0 30px #535353;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.wrap{
+    padding: 20px ;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:  100%;
+}
+
+.content{
+    display: flex;
+}
+
+
+.left-content{
+    order: 0;
+    padding-right: 25px;
+    width: 70%;
+    height: 100%;
+}
+
+.right-content {
+  order: 1;
+  width: 30%;
+  height: 100%;
+}
+
+.right-post{
+    color: gray;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.right-post p{
+    margin-top: 0;
+}
+
+.left-post{
+    float: left;
+    width: 45%;
+    margin-right: 15px;
+}
+
+.left-post img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.thumbnail{
+    padding-bottom: 20px;
+}
+
+.thumbnail img{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.post{
+    margin-top: 20px;
+}
+
+.post-wrapper{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed gray;
+    overflow: auto;
+}
+
+.post-wrapper a,
+.nav-page a{
+    text-decoration: none;
+    color: #303030;
+    font-weight: bold;
+}
+
+.nav-page{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row-reverse nowrap;
+    width: 100%;
+}
+
+.nav-page a{
+    display: inline-block;
+    width: 1.5em;
+    text-align: center;
+}
+
+.active {
+    font-weight: bold;
+}
