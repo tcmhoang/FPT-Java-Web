@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 8:30:15 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Entries" table="Entries" catalog="FashionBlog" optimistic-lock="version">
+        <id name="entryId" type="int">
+            <column name="EntryID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categories" class="domain.Categories" fetch="select">
+            <column name="CategoryID" not-null="true" />
+        </many-to-one>
+        <property name="heading" type="string">
+            <column name="Heading" not-null="true" />
+        </property>
+        <property name="published" type="date">
+            <column name="Published" length="10" not-null="true" />
+        </property>
+        <property name="imageName" type="string">
+            <column name="ImageName" />
+        </property>
+        <property name="imageCaption" type="string">
+            <column name="ImageCaption" />
+        </property>
+        <property name="author" type="string">
+            <column name="Author" />
+        </property>
+        <property name="content" type="string">
+            <column name="Content" />
+        </property>
+    </class>
+</hibernate-mapping>
