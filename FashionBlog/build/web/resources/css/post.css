@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2020, 9:56:01 AM
+    Author     : Camer
+*/
+
+.post-wrapper{
+    margin-top: 16px;
+
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed gray;
+    overflow: auto;
+}
+
+.post-wrapper:first-child {
+    margin-top: 0;
+}
+
+.post, .photo{
+    margin-left: 65px;
+
+}
+
+.date{
+    float: right;
+    font-style: italic;
+}
+.post{
+    margin-top: 20px;
+}
+
+.post-wrapper a{
+    text-decoration: none;
+    color: #303030;
+    font-weight: bold;
+}
+
+.right-post{
+    color: gray;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.right-post p{
+    margin-top: 0;
+}
+
+.left-post{
+    float: left;
+    width: 45%;
+    margin-right: 15px;
+}
+
+.left-post img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.photo{
+    max-width: 100%;
+    padding-bottom: 20px;
+    margin: 3px 20px 8px 0;
+    width: 48.93617021%;
+
+}
+
+.photo img{
+    border-radius: 10px;
+    line-height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.photo p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-size: 14.4px;
+    line-height: 17.82px;
+    padding: 6px 1px;
+}
+
+
+.post-heading {
+  margin-bottom: 11px;
+}
+.post-heading a {
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+}
+

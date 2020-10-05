@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2020, 9:46:44 AM
+    Author     : Camer
+*/
+
+.camera-icon,
+.pencil-icon {
+    background-size: cover;
+    display: inline-block;
+    float: left;
+    height: 41px;
+    width: 41px;
+}
+.camera-icon {
+    background-image: url("#{resource['img/camera-retro.png']}");
+}
+.pencil-icon {
+    background-image: url("#{resource['img/pencil.png']}");
+}

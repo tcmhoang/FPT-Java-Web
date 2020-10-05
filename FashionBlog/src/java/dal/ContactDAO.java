@@ -5,7 +5,6 @@
  */
 package dal;
 
-import dal.HibernateUtil;
 import domain.Contact;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
