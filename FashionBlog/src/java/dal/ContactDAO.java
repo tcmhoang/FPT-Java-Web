@@ -5,6 +5,7 @@
  */
 package dal;
 
+import dal.HibernateUtil;
 import domain.Contact;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -37,8 +38,5 @@ public class ContactDAO {
             transaction = null;
         }
     }
-    
-    public static void main(String[] args) {
-        insert(new Contact(1, "Foo", "bar", "ahihi"));
-    }
+   
 }

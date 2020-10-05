@@ -6,7 +6,7 @@
     <class name="domain.Contact" table="Contact" catalog="FashionBlog" optimistic-lock="version">
         <id name="commentId" type="int">
             <column name="CommentID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="name" type="string">
             <column name="Name" not-null="true" />

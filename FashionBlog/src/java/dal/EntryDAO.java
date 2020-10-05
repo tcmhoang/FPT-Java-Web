@@ -5,6 +5,7 @@
  */
 package dal;
 
+import dal.HibernateUtil;
 import java.util.List;
 import domain.Entries;
 import org.hibernate.HibernateException;

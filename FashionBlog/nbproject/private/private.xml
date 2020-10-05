@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/index.xhtml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/domain/Entries.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/domain/Contact.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/dal/HibernateUtil.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/dal/ContactDAO.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/dal/EntryDAO.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/domain/Categories.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
