@@ -29,7 +29,7 @@ and open the template in the editor.
                 <div class="right-post">
                     <div class="date">
                         <h:outputText value="#{post.published}">
-                            <f:convertDateTime parent="dd-MM-yyyy"/>
+                            <f:convertDateTime pattern="dd-MM-yyyy"/>
                         </h:outputText>
                     </div>
                     <p>#{post.content}</p>

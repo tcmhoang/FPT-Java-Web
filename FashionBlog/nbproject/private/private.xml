@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/index.xhtml</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/detail.xhtml</file>
             <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/domain/Entries.java</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/WEB-INF/template/snippet/post.xhtml</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/overview.xhtml</file>
             <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/business/impl/EntryService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/WEB-INF/template/snippet/post.xhtml</file>
             <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/WEB-INF/template/snippet/photo.xhtml</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/resources/css/header.css</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/resources/css/style.css</file>
-            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/web/resources/css/post.css</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/business/IEntryService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog/src/java/controller/OverviewController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -59,9 +59,8 @@ public class EntryDAO {
 
     public static Entries selectByEntryID(int entryID) {
         String sql = "FROM Entries\n"
-                + "WHERE EntryID= :entryid \n"
-                + "ORDER BY Published DESC";
-        Entries res = null;
+                + "WHERE EntryID= :entryid";
+                Entries res = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             Query query = session.createQuery(sql);

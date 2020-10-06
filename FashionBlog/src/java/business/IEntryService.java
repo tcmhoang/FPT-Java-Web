@@ -13,6 +13,13 @@ import java.util.List;
  * @author Camer
  */
 public interface IEntryService {
+
     List<Entries> getTopPosts();
+
     String getCategoryName(Entries en);
+
+    Entries getEntryById(int id);
+
+    List<List<Entries>> getListsPostSortedByMonthAndYear();
+
 }

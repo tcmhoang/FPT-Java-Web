@@ -1,7 +1,7 @@
 package domain;
 // Generated Oct 4, 2020 8:30:14 PM by Hibernate Tools 4.3.1
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
