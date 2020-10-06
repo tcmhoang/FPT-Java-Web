@@ -36,6 +36,7 @@ body{
     box-shadow:  0 0 30px #535353;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    margin-bottom: 100px;
 }
 
 
@@ -44,6 +45,7 @@ body{
     font-size: 36px;
     line-height: 33.8px;
     padding: 9.6px 0;
+    margin-bottom: 10px;
 }
 
 

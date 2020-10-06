@@ -33,8 +33,10 @@ public class EntryDAO {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
-            session.close();
-            session = null;
+            if (session != null) {
+                session.close();
+                session = null;
+            }
         }
         return entries;
     }

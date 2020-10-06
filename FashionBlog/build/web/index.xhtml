@@ -6,9 +6,33 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/WEB-INF/template/layout/CommonLayout.xhtml">
+        <ui:define name="stylesheet">
+            <h:outputStylesheet name="css/icon.css"/>
+            <h:outputStylesheet name="css/post.css"/>
+        </ui:define>
         <ui:define name="content">
             <div class="left-content">
-                
+                <h3 class="page-title">Blog</h3>
+                <h:outputLabel rendered="#{homeController.topPosts.size() eq 0}">
+                    No Post here!
+                </h:outputLabel>
+                <ui:repeat rendered="#{homeController.topPosts.size() gt 0}" value="#{homeController.topPosts}" var="post">
+                    <ui:fragment rendered="#{homeController.getCategoryName(post) eq 'Post'}">
+                        <ui:include  src="WEB-INF/template/snippet/post.xhtml">
+                            <ui:param name="post" value="#{post}"/>
+                        </ui:include>
+                    </ui:fragment>
+
+                    <ui:fragment  rendered="#{homeController.getCategoryName(post) eq 'Photo'}">
+                        <ui:include src="WEB-INF/template/snippet/photo.xhtml">
+                            <ui:param name="post" value="#{post}"/>
+                        </ui:include>
+                    </ui:fragment>
+
+                </ui:repeat> 
+                <div id="pager">
+                    <h:link value="Overview" outcome="overview"/>
+                </div>
             </div>
         </ui:define>
     </ui:composition>

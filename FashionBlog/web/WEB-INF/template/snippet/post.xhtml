@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:component>
+        <div class="post-wrapper">
+            <div class="pencil-icon"></div>
+            <div class="post">
+                <h:panelGroup rendered="#{post.imageName != null}" class="left-post" layout="block">
+                    <div class="post-heading">
+                        <h:link value="#{post.heading}" outcome="detail">
+                            <f:param name="postID" value="#{post.entryId}"/>
+                        </h:link>
+                    </div>
+                    <h:link outcome="detail">
+                        <f:param name="postID" value="#{post.entryId}"/>
+                        <div class="post-image-wrapper">
+                            <h:graphicImage alt="some blah text here" name="#{post.imageName}" />
+                        </div>
+                    </h:link>
+                </h:panelGroup>
+                <div class="right-post">
+                    <div class="date">
+                        <h:outputText value="#{post.published}">
+                            <f:convertDateTime parent="dd-MM-yyyy"/>
+                        </h:outputText>
+                    </div>
+                    <p>#{post.content}</p>
+                </div>
+            </div>
+        </div>
+    </ui:component>
+</html>

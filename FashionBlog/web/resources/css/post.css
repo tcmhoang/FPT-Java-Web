@@ -27,12 +27,14 @@ and open the template in the editor.
 }
 
 .date{
-    float: right;
     font-style: italic;
+    margin-right: 10px;
+    float: right;
 }
 .post{
     margin-top: 20px;
 }
+
 
 .post-wrapper a{
     text-decoration: none;
@@ -41,13 +43,14 @@ and open the template in the editor.
 }
 
 .right-post{
-    color: gray;
     font-size: 15px;
     margin-top: 0;
 }
 
 .right-post p{
-    margin-top: 0;
+    padding-top: 17px;
+    clear: right;
+    font-size: 17px
 }
 
 .left-post{
@@ -56,18 +59,24 @@ and open the template in the editor.
     margin-right: 15px;
 }
 
-.left-post img{
-    max-width: 100%;
-    max-height: 100%;
+
+.post-image-wrapper{
     border-radius: 10px;
+    line-height: 0;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+}
+
+.post-image-wrapper img{
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .photo{
-    max-width: 100%;
+    width: 100%;
     padding-bottom: 20px;
     margin: 3px 20px 8px 0;
-    width: 48.93617021%;
-
 }
 
 .photo img{
@@ -87,12 +96,16 @@ and open the template in the editor.
 
 
 .post-heading {
-  margin-bottom: 11px;
+    margin-bottom: 11px;
 }
 .post-heading a {
-  color: black;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
-  line-height: 22px;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+}
+.heading-st a{
+    display: inline-block;
+    padding: 25px
 }
 
