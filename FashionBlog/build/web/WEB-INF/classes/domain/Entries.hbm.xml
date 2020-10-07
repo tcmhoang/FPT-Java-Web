@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Oct 4, 2020 8:30:15 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Oct 7, 2020 4:25:54 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="domain.Entries" table="Entries" catalog="FashionBlog" optimistic-lock="version">
         <id name="entryId" type="int">

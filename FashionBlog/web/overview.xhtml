@@ -18,8 +18,8 @@ and open the template in the editor.
                 <h3 class="page-title">Overview - Blog</h3>
                 <ui:repeat value="#{overviewController.listsPostSortedByMonthAndYear}" var="oneList">
                     <h3>
-                        <h:outputText value="#{oneList[0].published}">
-                            <f:convertDateTime parent="MM-yyyy"/>
+                        <h:outputText class="cap" value="#{oneList[0].published}">
+                            <f:convertDateTime pattern="MMMM-yyyy"/>
                         </h:outputText>
                     </h3>
                     <h:dataTable value="#{oneList}" var="ele">

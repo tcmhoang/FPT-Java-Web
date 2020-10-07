@@ -1,5 +1,5 @@
 package domain;
-// Generated Oct 4, 2020 8:30:14 PM by Hibernate Tools 4.3.1
+// Generated Oct 7, 2020 4:25:53 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

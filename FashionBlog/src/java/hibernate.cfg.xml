@@ -40,18 +40,20 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
-    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="background-validation">true</property>
-    <property name="hibernate.c3p0.idle_test_period">3600</property>
-    <property name="hibernate.max_fetch_depth">3</property>
-    <property name="hibernate.default_schema">dbo</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://localhost;database=FashionBlog</property>
-    <property name="hibernate.connection.username">artlist</property>
-    <property name="hibernate.connection.password">777</property>
-    <mapping resource="domain/Categories.hbm.xml"/>
-    <mapping resource="domain/Contact.hbm.xml"/>
-    <mapping resource="domain/Entries.hbm.xml"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="background-validation">true</property>
+        <property name="hibernate.c3p0.idle_test_period">3600</property>
+        <property name="hibernate.max_fetch_depth">3</property>
+        <property name="hibernate.default_schema">dbo</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost;database=FashionBlog</property>
+        <property name="hibernate.connection.username">artlist</property>
+        <property name="hibernate.connection.password">777</property>
+        <mapping resource="domain/Information.hbm.xml"/>
+        <mapping resource="domain/Categories.hbm.xml"/>
+        <mapping resource="domain/Contact.hbm.xml"/>
+        <mapping resource="domain/Entries.hbm.xml"/>
+
+    </session-factory>
 </hibernate-configuration>

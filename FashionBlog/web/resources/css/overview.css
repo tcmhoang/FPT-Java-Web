@@ -31,3 +31,7 @@ td:first-child {
 td a {
     color: black;
 }
+
+.cap {
+    text-transform: uppercase;
+}

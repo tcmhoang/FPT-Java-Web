@@ -41,7 +41,8 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="FashionBlog"/>
-  <table-filter match-name="Categories"/>
-  <table-filter match-name="Contact"/>
+  <table-filter match-name="Information"/>
   <table-filter match-name="Entries"/>
+  <table-filter match-name="Contact"/>
+  <table-filter match-name="Categories"/>
 </hibernate-reverse-engineering>

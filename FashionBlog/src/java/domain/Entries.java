@@ -1,5 +1,5 @@
 package domain;
-// Generated Oct 4, 2020 8:30:14 PM by Hibernate Tools 4.3.1
+// Generated Oct 7, 2020 4:25:53 AM by Hibernate Tools 4.3.1
 
 import java.sql.Date;
 import java.util.Objects;
@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "Entries",
-        catalog = "FashionBlog"
+         catalog = "FashionBlog"
 )
 public class Entries implements java.io.Serializable {
 
@@ -94,7 +94,7 @@ public class Entries implements java.io.Serializable {
 
     @Column(name = "ImageName")
     public String getImageName() {
-        return "img/" + this.imageName;
+        return "img/"+ this.imageName;
     }
 
     public void setImageName(String imageName) {
@@ -145,10 +145,7 @@ public class Entries implements java.io.Serializable {
             return false;
         }
         final Entries other = (Entries) obj;
-        if (this.entryId != other.entryId) {
-            return false;
-        }
-        return true;
+        return this.entryId == other.entryId;
     }
 
 }

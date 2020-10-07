@@ -1,5 +1,5 @@
 package domain;
-// Generated Oct 4, 2020 8:30:14 PM by Hibernate Tools 4.3.1
+// Generated Oct 7, 2020 4:25:53 AM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +25,8 @@ public class Contact implements java.io.Serializable {
     public Contact() {
     }
 
-    public Contact(String name, String email, String message) {
+    public Contact(int commentId, String name, String email, String message) {
+        this.commentId = commentId;
         this.name = name;
         this.email = email;
         this.message = message;
