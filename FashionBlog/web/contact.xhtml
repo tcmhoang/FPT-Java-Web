@@ -8,14 +8,31 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
     <ui:composition template="/WEB-INF/template/layout/CommonLayout.xhtml">
         <ui:define name="stylesheet">
             <h:outputStylesheet name="css/contact.css"/>
         </ui:define>
         <ui:define name="content">
-
+            <div class="left-content">
+                <h3 class="page-title">Contact me</h3>
+                <p class="dashed"> Send your message </p>
+                <div><h:outputText rendered="#{contactController.isSent}" class="alert-success" value="Thank you for your message!"/></div>
+                <h:messages class="error"/>
+                <h:form class="contact-form">
+                    <div>Write your message here. Fill out the form:</div>
+                    <div class="content">
+                        <h:inputText p:placeholder="Write your name here"  required="true" requiredMessage="Please enter your name" value="#{contactController.name}"/>
+                        <h:inputText p:placeholder="Write your email here" required="true" requiredMessage="Cannot leave email empty" validatorMessage="Email is not valid" value="#{contactController.email}">
+                            <f:validateRegex pattern="^\S+@\S+\.\S+$"/>
+                        </h:inputText>
+                    </div>
+                    <h:inputTextarea p:placeholder="Write your message here" required="true" requiredMessage="Cannot leave the content blank" value="#{contactController.message}"/>
+                    <h:commandButton class="send-button" value="Send - Click here" action="#{contactController.sent()}"/>
+                </h:form>
+            </div>
         </ui:define>
     </ui:composition>
 </html>

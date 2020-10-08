@@ -8,3 +8,67 @@ and open the template in the editor.
     Author     : Camer
 */
 
+.dashed{
+    border-bottom: 1px black dashed;
+    font-size: 30px;
+}
+.contact-form {
+    padding-bottom: 22px;
+    padding-top: 16px;
+}
+
+.error{
+    background-color: crimson;
+    border: 1px solid #fbeed5;
+    border-color: #d6e9c6;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 22px;
+    padding: 8px 35px 8px 14px;
+    list-style: none;
+}
+.alert-success {
+    background-color: #dff0d8;
+    border: 1px solid #fbeed5;
+    border-color: #d6e9c6;
+    border-radius: 6px;
+    color: #468847;
+    margin-bottom: 22px;
+    padding: 8px 35px 8px 14px;
+}
+
+input, textarea, button{
+    margin: 2%;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    height: 30px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    flex: 1;
+}
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    height: 12em;
+    line-height: 22px;
+    padding: 4px 6px;
+    width: 96%;
+    resize: none;
+}
+
+.send-button {
+    background-color: #cd0d18;
+    border: 0 solid #ccc;
+    border-radius: 18px;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    padding: 5px 12px;
+    height: unset;
+    width: unset;
+    float: right;
+}
