@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/impl/InformationService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/controller/OverviewController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/dal/IContactDAO.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/IEntryService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/controller/PostDetailController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/controller/AboutController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/entity/Contact.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/IInformationService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/impl/EntryService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/dal/AbstractBaseDAO.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/controller/ContactController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/entity/Entry.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/impl/ContactService.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/entity/Info.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/dal/impl/EntryDAO.java</file>
+            <file>file:/C:/Users/Camer/Documents/NetBeansProjects/FashionBlog_Without_Hibernate/src/java/business/IContactService.java</file>
+        </group>
+    </open-files>
+</project-private>

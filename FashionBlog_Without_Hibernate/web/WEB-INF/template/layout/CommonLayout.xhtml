@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>#{initParam.ApplicationName}</title>
+        <h:outputStylesheet name="css/style.css"/>
+        <h:outputStylesheet name="css/header.css"/>
+        <h:outputStylesheet name="css/footer.css"/>
+        <h:outputStylesheet name="css/smbox.css"/>
+        <ui:insert name="stylesheet">
+        </ui:insert>
+    </h:head>
+    <h:body>
+        <div class="container">
+            <header>
+                <ui:insert name="header">
+                    <ui:include src="/WEB-INF/template/snippet/header.xhtml"/>
+                </ui:insert>
+            </header>
+            <div class="wrap">
+                <div class="content">
+                    <ui:insert name="content">
+                        This is a place holder content
+                    </ui:insert>
+                    <ui:insert name="sm-box">
+                        <ui:include src="/WEB-INF/template/snippet/smbox.xhtml"/>
+                    </ui:insert>
+                </div>
+                <footer class="footer">
+                    <ui:insert name="footer">
+                        <ui:include src="/WEB-INF/template/snippet/footer.xhtml"/>
+                    </ui:insert>
+                </footer>
+            </div>
+        </div>
+    </h:body>
+</html>

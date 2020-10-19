@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 6, 2020, 9:40:02 AM
+    Author     : Camer
+*/
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    line-height: 22px;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+th {
+    font-weight: normal;
+    text-align: left;
+}
+th:last-child, td:last-child {
+    text-align: right;
+}
+td:first-child {
+    width: 25%;
+}
+td a {
+    color: black;
+}
+
+.cap {
+    text-transform: uppercase;
+}

@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    background: url("#{resource['img/Manhattan.jpg']}");
+    background-attachment: fixed;
+
+    background-position: center top;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+
+
+    font-family: sans-serif;
+}
+
+.wrap{
+
+    padding: 20px ;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:  100%;
+}
+
+.container{
+    max-width: 92%;
+    margin: 0 auto;
+    box-shadow:  0 0 30px #535353;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 100px;
+}
+
+
+.page-title {
+    font-family: 'Vivaldi', sans-serif;
+    font-size: 36px;
+    line-height: 33.8px;
+    padding: 9.6px 0;
+    margin-bottom: 10px;
+}
+
+
+.content{
+    display: flex;
+}
+
+.left-content{
+    order: 0;
+    padding-right: 25px;
+    width: 80%;
+    height: 100%;
+}
+
+.right-content {
+    order: 1;
+    width: 20%;
+    height: 100%;
+}
+
+
+#pager {
+    padding: 27px 0;
+    text-align: center;
+}
+#pager a {
+    color: black;
+}
+
+
+.active {
+    font-weight: bold;
+}
