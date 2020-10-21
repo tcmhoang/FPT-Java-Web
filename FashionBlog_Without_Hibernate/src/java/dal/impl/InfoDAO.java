@@ -45,6 +45,13 @@ public class InfoDAO extends AbstractBaseDAO implements IInfoDAO {
         } catch (SQLException ex) {
             Logger.getLogger(InfoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally{
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(InfoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         return res;
     }
 

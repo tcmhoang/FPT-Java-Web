@@ -38,6 +38,10 @@ public abstract class AbstractBaseDAO {
             connection = DriverManager.getConnection(url);
         }
     }
+    
+    public Connection createNewConnection() throws SQLException{
+        return DriverManager.getConnection(url);
+    }
 
     public void closeConnection() throws SQLException {
         if (rs != null || !rs.isClosed()) {

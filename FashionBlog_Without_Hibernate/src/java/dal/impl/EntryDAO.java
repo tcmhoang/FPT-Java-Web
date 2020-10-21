@@ -8,7 +8,9 @@ package dal.impl;
 import dal.AbstractBaseDAO;
 import dal.IEntryDAO;
 import entity.Entry;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -38,14 +40,15 @@ public class EntryDAO extends AbstractBaseDAO implements IEntryDAO {
             return categoryMap.get(categoryId);
         }
         String query = "Select CategoryName from Categories where CategoryID = ?";
-        try {
-            openConnection();
-            stm = connection.prepareStatement(query);
-            stm.setInt(1, categoryId);
-            rs = stm.executeQuery();
-            rs.next();
-            categoryMap.put(categoryId, rs.getString("CategoryName"));
-            return categoryMap.get(categoryId);
+        try (Connection tempConnection = createNewConnection()) {
+            try (PreparedStatement tempStm = tempConnection.prepareStatement(query)) {
+                tempStm.setInt(1, categoryId);
+                try (ResultSet tempRs = tempStm.executeQuery()) {
+                    tempRs.next();
+                    categoryMap.put(categoryId, tempRs.getString("CategoryName"));
+                    return categoryMap.get(categoryId);
+                }
+            }
         } catch (SQLException ex) {
             Logger.getLogger(EntryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -109,6 +112,12 @@ public class EntryDAO extends AbstractBaseDAO implements IEntryDAO {
             rs.next();
         } catch (SQLException ex) {
             Logger.getLogger(EntryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(EntryDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return res;
     }

@@ -36,6 +36,13 @@ public class ContactDAO extends AbstractBaseDAO implements IContactDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ContactDAO.class.getName()).log(Level.SEVERE, null, ex);
         } 
+        finally{
+            try {
+                closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(ContactDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
 }
