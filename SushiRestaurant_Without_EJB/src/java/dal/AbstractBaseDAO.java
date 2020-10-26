@@ -40,15 +40,15 @@ public abstract class AbstractBaseDAO {
     }
 
     public void closeConnection() throws SQLException {
-        if (rs != null || !rs.isClosed()) {
+        if (rs != null && !rs.isClosed()) {
             rs.close();
             rs = null;
         }
-        if (stm != null || !stm.isClosed()) {
+        if (stm != null && !stm.isClosed()) {
             stm.close();
             stm = null;
         }
-        if (connection != null || !connection.isClosed()) {
+        if (connection != null && !connection.isClosed()) {
             connection.close();
             connection = null;
         }
