@@ -44,6 +44,7 @@ public abstract class AbstractBaseDAO {
     }
 
     public void closeConnection() throws SQLException {
+        
         if (rs != null && !rs.isClosed()) {
             rs.close();
             rs = null;

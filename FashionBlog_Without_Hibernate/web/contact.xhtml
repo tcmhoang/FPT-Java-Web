@@ -24,12 +24,16 @@ and open the template in the editor.
                 <h:form class="contact-form">
                     <div>Write your message here. Fill out the form:</div>
                     <div class="content">
-                        <h:inputText p:placeholder="Write your name here"  required="true" requiredMessage="Please enter your name" value="#{contactController.name}"/>
+                        <h:inputText p:placeholder="Write your name here"  required="true" requiredMessage="Please enter your name" value="#{contactController.name}">
+                            <f:validator validatorId="strVal"/>
+                        </h:inputText>
                         <h:inputText p:placeholder="Write your email here" required="true" requiredMessage="Cannot leave email empty" validatorMessage="Email is not valid" value="#{contactController.email}">
                             <f:validateRegex pattern="^\S+@\S+\.\S+$"/>
                         </h:inputText>
                     </div>
-                    <h:inputTextarea p:placeholder="Write your message here" required="true" requiredMessage="Cannot leave the content blank" value="#{contactController.message}"/>
+                    <h:inputTextarea p:placeholder="Write your message here" required="true" requiredMessage="Cannot leave the content blank" value="#{contactController.message}">
+                        <f:validator validatorId="strVal"/>
+                    </h:inputTextarea>
                     <h:commandButton class="send-button" value="Send - Click here" action="#{contactController.sent()}"/>
                 </h:form>
             </div>
