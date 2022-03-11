@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+.body {
+    font-family: Segoe, 'Segoe UI', Arial, Helvetica, sans-serif, 'DejaVu Sans',
+        'Trebuchet MS', Verdana, 'sans-serif';
+    color: #000;
+}
+.game {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+.game h2 {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f5f4de;
+    margin: 0;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 2em;
+    background-color: #8eeae4;
+}
+.elasped_time {
+    height: 10px;
+    width: 0px;
+    background-color: #ea3223;
+    transition: width ease-in-out;
+}
+.question {
+    background-color: #c6d6eb;
+    flex: 2;
+    text-align: center;
+}
+.ans_display {
+    flex: 1;
+    background-color: #e7c696;
+    text-align: center;
+}
+.ans_input {
+    flex: 2;
+    background-color: #fbe4c8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ans_input button {
+    width: 21vw;
+    height: 21vw;
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+.btn_true {
+    color: #377d22;
+}
+
+.btn_false {
+    color: #ea3223;
+}
