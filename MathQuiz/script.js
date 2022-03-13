@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     const scoreText = (val) => `Score: ${val}`
     const levelText = (val) => `Level: ${val}`
+    console.log(playGame)
 
     const endGame = () => {
         alert(
@@ -47,10 +48,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     title.addEventListener('click', async (e) => {
         if (!playGame) {
-            playGame = confirm('Are you sure to start the game?')
+            ;(playGame = confirm('Are you sure to start the game?'))
                 ? newQuest()
                 : () => {}
         }
+        console.log(playGame)
 
         e.stopPropagation()
     })

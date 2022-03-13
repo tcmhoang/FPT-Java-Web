@@ -15,7 +15,8 @@ class MathQuiz {
         const o2 = this.#genOperand()
         this.#currentCorrectAns = this.#mathItUp[operand](o1, o2)
         const isPositive = Math.random() > 0.5 ? true : false
-        const wAns = this.#getWrongAns(this.#currentCorrectAns, isPositive)
+        let wAns = this.#getWrongAns(this.#currentCorrectAns, isPositive)
+        wAns = isNaN(wAns) ? 'Do not have any result' : wAns
         return {
             equation: `${o1} ${operand} ${o2}`,
             x: !Math.round(Math.random()) ? this.#currentCorrectAns : wAns,

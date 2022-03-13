@@ -16,7 +16,6 @@ class ElaspedTime {
         for (let i = 0; i <= 10; i++) {
             if (this.#isStop) break
             seffs(i * 10)
-            console.log(i)
             await new Promise(
                 (rs) => (this.#currentTimer = setTimeout(rs, firstTen))
             )

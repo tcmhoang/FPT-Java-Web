@@ -27,6 +27,8 @@ html {
     text-align: center;
     background-color: #f5f4de;
     margin: 0;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .dashboard {
@@ -45,12 +47,20 @@ html {
 .question {
     background-color: #c6d6eb;
     flex: 2;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
 }
 .ans_display {
     flex: 1;
     background-color: #e7c696;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bolder;
 }
 .ans_input {
     flex: 2;
@@ -65,6 +75,7 @@ html {
     height: 21vw;
     font-size: 3em;
     font-weight: bolder;
+    margin: 35px;
 }
 
 .btn_true {
